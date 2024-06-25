@@ -385,5 +385,8 @@ for i in range(n_item):
 dataset['item_description'] = final_description
 
 if save:
+    # full_path = "{}/{}/data".format(base_dir, data_path)
+    # if not os.path.exists(full_path):
+    #     os.makedirs(full_path)
     with open("{}/{}/data/dataset.pkl".format(base_dir, data_path), 'wb') as fs:
         pickle.dump(dataset, fs)
