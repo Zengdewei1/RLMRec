@@ -1,0 +1,59 @@
+Generating Profile for Item
+---------------------------------------------------
+
+The System Prompt (Instruction) is:
+
+You will serve as an assistant to help me summarize which types of users would enjoy a specific business.
+I will provide you with the basic information (name, city and category) of that business and also some feedback of users for it.
+Here are the instructions:
+1. The basic information will be described in JSON format, with the following attributes:
+{
+    "name": "the name of the business",
+    "city": "city where the company is located", (if there is no city, I will set this value to "None")
+    "categories": "several tags describing the business" (if there is no categories, I will set this value to "None")
+}
+2. Feedback from users will be managed in the following List format:
+[
+    "the first feedback",
+    "the second feedback",
+    "the third feedback",
+    ....
+]
+
+2. The information I will give you:
+BASIC INFORMATION: a JSON string describing the basic information about the business.
+USER FEEDBACK: a List object containing some feedback from users about the business.
+
+Requirements:
+1. Please provide your answer in JSON format, following this structure:
+{
+    "summarization": "A summarization of what types of users would enjoy this business" (if you are unable to summarize it, please set this value to "None")
+    "reasoning": "briefly explain your reasoning for the summarization"
+}
+2. Please ensure that the "summarization" is no longer than 200 words.
+2. Please ensure that the "reasoning" is no longer than 200 words.
+4. Do not provide any other text outside the JSON string.
+
+---------------------------------------------------
+
+The Input Prompt is:
+
+BASIC INFORMATION: 
+{"name": "Su Xing House", "city": "Philadelphia", "categories": "\"Kosher, Chinese, Restaurants, Vegetarian, Vegan\""}
+USER FEEDBACK: 
+[
+"The food at Su Xing House will not blow your mind.  What is great about it is that you are able to have all those wonderful feelings of eating chinese food (from your childhood) but without the meat.  Most (if not all) of their stuff seems to be vegan.  Perhaps they throw in some egg or butter somewhere but for the most part, you're good.The price point is insanely low for this section of the city.  There aren't many places with a lunch special like this one.  For a low price, you get soup, entree, rice and a spring roll, with all the tea and duck sauce you can drink.On a recent trip, I was pleasantly surprised by the lotus root soup.  I doctored it up with a bit of white pepper and it was nearly perfect.  I'm partial to the homestyle bean curd but I haven't ever gotten them to prepare me something "spicy"  I feel like each time I ask for it they just sort of chuckle and never actually do it.So, I've eaten here a number of times and will continue to.  It's an inexpensive lunch option and the food is tasty, in that "I want to feel guilty about eating chinese" way."
+"I came here for lunch with my husband after I checked into our hotel. It was next to our hotel and the reviews on Yelp made it sound heavenly and it sure was. Initially we were the only customers in the restaurant but that changed soon enough. After looking at their menu I ordered the potato and cauliflower curry and my husband ordered the General Tso's tofu, both the lunch special. For appetizer we ordered the scallion pancakes. The pancakes were great. Nice and fried and came with a dipping sauce. My lunch special was okay. I much preferred my husband's and I wished I also ordered it. The potato and cauliflower was a bit bland while his tofu was crispy and delicious. The hot and sour soup and spring roll that I had with the lunch special was also delicious.Overall great place. I would definitely come again when I'm in PA. I didn't even tell my husband till the end that this was a vegetarian restaurant and he said that he didn't even miss the meat! Service was decent, especially for a Chinese restaurant. Tons of seating!"
+"I was on a vegan cleanse.  I needed real food.  Enter Su Xing House.  I had the Sesame Abalone Mushroom (see photo) it was divine.  Granted, I was hungry and desperate but it really was delicious.  I have also had the fried brown rice and it was also very good.  We have only really been there after matinee theater so the place has never really been crowded.  The decor is dark, cozy and the place is really clean.  I would recommend this place for a quick and quiet weekend lunch."
+"so good. so very, very good.the portions are ridiculously large, the food delicious, and it's vegan! woohoo! okay, so i'm not vegan. but, i AM veggggggggietarryan, so it still jibed with my eating.el buggo digs the croquettes the most, while i am partial to the peas, potatoes and curry sauce. did i mention how very good this is?"
+"Although I've been a vegetarian for decades, I have never appreciated fake meat that too commonly dominates vegetarian restaurants. This is why I LOVE Su Xing.  They pay close attention to each vegetable, no dish seems to be slapped together without thought.  Servings are huge and very reasonably priced.  I love their Ebony and Ivory, Stir Fried Peapods, Seaweed Salad, I could go on and on. They also deliver until 11PM on weekends which is rare around these parts.  It always hits the spot beautifully."
+"Excellent vegetarian Chinese food. And it's not often you get to say "vegetarian Chinese food". The menu is varied, although unlike a similar place in Hong Kong it doesn't have quite as many sea vegetables, other than a few different seaweeds. It does have a lot of different mushrooms, and they are all delicious. I had the #22, Dried Bean Curd w. Spiral Seaweed, my Wife had  the #10 As You Wish, Bean curd skin filled golden mushroom, black mushroom, dried bean curd and Chinese celery served w. water chestnut and asparagus. Both were great, although in this case I think my Wife won. The restaurant itself is very nice and surprisingly low key and upscale looking. A great, inexpensive find."
+]
+---------------------------------------------------
+
+Generated Results:
+
+{
+    "summarization": "Vegetarians, vegans, and those looking for inexpensive, delicious, and diverse vegetarian Chinese food options would enjoy Su Xing House in Philadelphia.",
+    "reasoning": "The feedback consistently praises the variety and taste of the vegetarian Chinese dishes offered at Su Xing House, highlighting the great flavors and large portions at reasonable prices. Both vegetarians and non-vegetarians appreciate the food quality, with some mentioning specific favorite dishes. The availability of vegan options, along with the pleasant dining experience and decent service, makes it a recommended choice for individuals seeking flavorful vegetarian or vegan meals."
+}

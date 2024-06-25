@@ -1,0 +1,50 @@
+# 预处理的日志
+
+networkx
+
+meta.log
+{'asin': '0001048791', 'salesRank': {'Books': 6334800}, 'imUrl': 'http://ecx.images-amazon.com/images/I/51MKP0T4DBL.jpg', 'categories': [['Books']], 'title': 'The Crucible: Performed by Stuart Pankin, Jerome Dempsey &amp; Cast'}
+
+读取review文件: 22507155it [25:02, 14983.25it/s]
+稀疏化: 100%|████████████████████████████████████████████████████████████████████████████| 4057129/4057129 [00:15<00:00, 256252.64it/s]
+准备networkx的edges: 100%|███████████████████████████████████████████████████████████████| 4057129/4057129 [00:06<00:00, 619191.74it/s]
+k-core完成后收集edges: 100%|███████████████████████████████████████████████████████████████| 284572/284572 [00:01<00:00, 281575.46it/s]
+映射数据中: 100%|██████████████████████████████████████████████████████████████████████████| 284572/284572 [00:01<00:00, 282283.61it/s]
+读取meta文件: 2370585it [06:47, 5816.54it/s] 
+处理meta数据:   0%|   
+A total of 1161 items do not have title or description.
+After first 10-core, users 11056 / 1489926 and items 13338 / 1068157
+Final user-item relations 284572, sparsity 0.0019297605461822082. User degree 10.0/25.739146164978294/643.0, Item degree 10.0/21.335432598590494/435.0
+
+Statistics user_num 11056, item_num 13338
+First split: min user degree 1.0 and min item degree 0.0
+Split again: min user degree 1.0 and min item degree 1.0
+Split result: trn user degree 1.0/15.443469609261939/369.0, trn item degree 1.0/12.80124456440246/246.0
+Split result: trn inter 170743, val inter 56914 and tst inter 56915
+Split result: trn inter / tst inter 2.9999648598787667
+Split result: trn inter / val inter 3.0000175703693293
+
+
+review
+{'reviewerID': 'AH2L9G3DQHHAJ', 'asin': '0000000116', 'reviewerName': 'chris', 'helpful': [5, 5], 'reviewText': "Interesting Grisham tale of a lawyer that takes millions of dollars from his firm after faking his own death. Grisham usually is able to hook his readers early and ,in this case, doesn't play his hand to soon. The usually reliable Frank Mueller makes this story even an even better bet on Audiobook.", 'overall': 4.0, 'summary': 'Show me the money!', 'unixReviewTime': 1019865600, 'reviewTime': '04 27, 2002'}
+
+
+
+Core-k 10 and Base score 3
+读取review文件: 0it [00:00, ?it/s]{'reviewerID': 'AH2L9G3DQHHAJ', 'asin': '0000000116', 'reviewerName': 'chris', 'helpful': [5, 5], 'reviewText': "Interesting Grisham tale of a lawyer that takes millions of dollars from his firm after faking his own death. Grisham usually is able to hook his readers early and ,in this case, doesn't play his hand to soon. The usually reliable Frank Mueller makes this story even an even better bet on Audiobook.", 'overall': 4.0, 'summary': 'Show me the money!', 'unixReviewTime': 1019865600, 'reviewTime': '04 27, 2002'}
+读取review文件: 22507155it [22:53, 16381.58it/s]
+稀疏化: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4057129/4057129 [00:12<00:00, 333065.77it/s]
+准备networkx的edges: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4057129/4057129 [00:05<00:00, 704911.19it/s]
+k-core完成后收集edges: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 284572/284572 [00:00<00:00, 299395.05it/s]
+映射数据中: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 284572/284572 [00:00<00:00, 311608.59it/s]
+读取meta文件: 2370585it [05:36, 7047.55it/s]
+处理meta数据: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2370585/2370585 [00:03<00:00, 662597.42it/s]
+A total of 1161 items do not have title or description.
+After first 10-core, users 11056 / 1489926 and items 13338 / 1068157
+Final user-item relations 284572, sparsity 0.0019297605461822082. User degree 10.0/25.739146164978294/643.0, Item degree 10.0/21.335432598590494/435.0
+Statistics user_num 11056, item_num 13338
+First split: min user degree 1.0 and min item degree 0.0
+Split again: min user degree 1.0 and min item degree 1.0
+Split result: trn user degree 1.0/15.443469609261939/369.0, trn item degree 1.0/12.80124456440246/246.0
+Split result: trn inter 170743, val inter 56914 and tst inter 56915
+Split result: trn inter / tst inter 2.9999648598787667

@@ -1,0 +1,48 @@
+Generating Profile for User
+---------------------------------------------------
+
+The System Prompt (Instruction) is:
+
+You will serve as an assistant to help me determine which types of business a specific user is likely to enjoy.
+I will provide you with information about businesses that the user has interacted, as well as his or her reviews of those businesses.
+Here are the instructions:
+1. Each interacted business will be described in JSON format, with the following attributes:
+{
+    "title": "the name of the business", (if there is no business, I will set this value to "None")
+    "description": "a description of what types of users will like this business",
+    "review": "the user's review on the business" (if there is no review, I will set this value to "None")
+}
+
+2. The information I will give you:
+PURCHASED BUSINESSES: a list of JSON strings describing the businesses that the user has interacted.
+
+Requirements:
+1. Please provide your answer in JSON format, following this structure:
+{
+    "summarization": "A summarization of what types of business this user is likely to enjoy" (if you are unable to summarize it, please set this value to "None")
+    "reasoning": "briefly explain your reasoning for the summarization"
+}
+2. Please ensure that the "summarization" is no longer than 100 words.
+3. The "reasoning" has no word limits.
+4. Do not provide any other text outside the JSON string.
+---------------------------------------------------
+
+The Input Prompt is:
+
+PURCHASED BUSINESSES: 
+[
+{"title": "Vernick Food & Drink", "description": "Foodies and those looking for a fine dining experience would enjoy Vernick Food & Drink, especially for special occasions. The menu offers diverse and inventive flavor combinations with dishes that are well executed and balanced in flavor. The rustic and intimate atmosphere contributes to a trendy vibe and cool experience. Sharing plates is recommended, and must-try dishes include the scallop sashimi, chicken liver toast, grilled romaine, sea bass with tomato sauce, braised veal, and desserts. The cocktail menu is well-curated and worth trying. However, the slower course timing may be something to consider.", "review": "Yeah, i think it's the best restaurant in philly. I really do. Half chicken is amazing, so is the potato dish. Crab toast is to die for. Honestly, just well cooked food in perfectly orchestrated restaurant. No need for salt and pepper - things are literally cooked perfectly. Their nice touches: amuse bouche, complementary toast, small cookies after dinner - gratis. I just wish you could get into this place!! hard to score a table, and also hard to get a place at the bar. "}
+{"title": "Condesa", "description": "Condesa is an upscale Mexican restaurant and bar located in Philadelphia that offers tasty and flavorful food and cocktails. It is a great place for a date night or night out with friends. The restaurant has a modern, cozy decor. The pricing is high, reflecting the restaurant's downtown location. The food is authentic and tasty, and the staff is knowledgeable. Some dishes are small, but the signature sauces are a hit. If you have acid reflux, Condesa might not be the best fit for you because some dishes are spicy. The atmosphere is visually appealing but the service is average. The restaurant offers a good selection of tequila but needs to improve its wine selection. ", "review": "Came on a Tuesday night and sat at the bar for drinks and food. The food was delicious. We kept it simple with a salad and the roast chicken but these were anything but simple. Flavors were delicious - yes, a bit spicy on the chicken, but divine. The service was average if not below average and the drink menu was good for tequila but they need to get better wines by the glass. We tasted a few but they were really \"swilly\" so we stuck with tequila. If they add better wines and have their servers pay a little more attention i think it will be a great new place. "}
+{"title": "Day By Day", "description": "Day By Day is a great breakfast and brunch spot in Philadelphia offering classic and innovative menu items with fresh ingredients. It is popular among fans of eggs benedict, lox bagels, latkes, cinnamon buns, and quiche. The menu is a mix of classic and innovative dishes. Day By Day may be a great choice for people with dietary restrictions because staff is accommodating. However, customers that are looking for something extraordinary or unique may not find it at Day By Day.", "review": "Local brunch spot. The food is good but the service not. Also, the restaurant itself is kinda unattractive - wood paneling with yellow paint on it and the ceiling was stained. Considering what they charge, they should have nicer and more attentive service. They do that thing where they put your check down while you're still eating. Again, that's fine for a diner but when you're charging $12 for eggs, it sends a message: we can't wait for you to leave. "}
+{"title": "P. J. Clarke's", "description": "P.J. Clarke's, located in Philadelphia, would be enjoyed by people who appreciate good service, a relaxed atmosphere, great outdoor seating, seafood, and cocktails. This place is perfect for groups of 35-55 people to celebrate events. Vegetarians and non-meat eaters would be happy with their wide selection of fish and non-meat items. However, those who are looking for a quick and cheap meal should look for another place. ", "review": "Great vibe. Good bar scene. Manager is excellent with good vision for the place. Food was outstanding. Had trout and the lobster Cobb. Delish. "}
+{"title": "Garces Trading Company", "description": "Garces Trading Company is a suitable place for those who appreciate a sophisticated and elegant ambiance to have quality wine or cocktails. The establishment is particularly appealing for brunch, lunch and dinner because of its chef-inspired menus that offer a variety of options to choose from. The food is expensive in comparison to other restaurants and tiny in size except for the deep-dish pizza. Nevertheless, for those who value presentation, the meals are aesthetically pleasing. Besides, the outdoor seating area and row of sampling urns with free samples of high-end products such as black truffle oil are added perks of the establishment. Garces Trading Company is a great spot for groups and friends, but it is not advisable for fancy date nights or for those looking for a meal to leave without feeling hungry.", "review": "Wonderful! great lunch - casual, but delicious. as always he is expert at charcuterie and cheese and offers a range of lovely add ons. outside seating. perfecto. "}
+{"title": "A La Maison", "description": "A La Maison is a French-style restaurant in Ardmore that's perfect for those romantic occasions or anyone looking for consistent good food with excellent service. However, the prices are a little steep but are worth the experience. It is a BYOB restaurant, which helps to offset the higher cost of the food. It seems like the restaurant has an excellent ambiance for romantic events although they tend to renege on reservations at times. The food is generally good, with some of the dishes being unique and others being average. It works for people who want to have a decent meal without ending up in over-crowded restaurants.", "review": "A La Maison works in Ardmore. It's a quaint pretty place with cheerful wait staff and good food. Apparently the pate dishes are wonderful, but we didn't try these. The appetizers and entrees we had were all very good. We had the trout and the steak au poive - they were both good, but not unbelievably good, but that's okay. The atmosphere and pleasant pace of the meal make it a nice option on the Main Line, which is known to have either expensive and not particularly good restaurants or rushed and crowded places. I'd be glad to go again. "}
+]
+---------------------------------------------------
+
+Generated Results:
+
+{
+    "summarization": "This user is likely to enjoy upscale and fine dining restaurants with diverse and inventive menus. They appreciate well-executed, balanced dishes and well-curated cocktail menus. The user values good service, sophisticated ambiance, and attention to detail in food presentation. They enjoy trendy, cool atmospheres and special touches like complimentary items. Additionally, the user prefers places suitable for romantic occasions and groups, and is willing to pay higher prices for quality dining experiences.",
+    "reasoning": "Based on the user's interactions with upscale restaurants like Vernick Food & Drink, Condesa, Garces Trading Company, A La Maison, and P. J. Clarke's, it is evident that they enjoy fine dining experiences, sophisticated ambiance, diverse menus, and attention to detail in food quality. Their reviews emphasize factors such as well-cooked food, good service, trendy atmospheres, and good vibes. The user appreciates special touches like complimentary items, outdoor seating, and various menu options. Therefore, it can be concluded that they are likely to enjoy similar upscale, fine dining restaurants in the future."
+}
